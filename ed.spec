@@ -4,7 +4,7 @@
 #
 Name     : ed
 Version  : 1.9
-Release  : 10
+Release  : 11
 URL      : http://ftp.wayne.edu/gnu/ed/ed-1.9.tar.gz
 Source0  : http://ftp.wayne.edu/gnu/ed/ed-1.9.tar.gz
 Summary  : No detailed summary available
