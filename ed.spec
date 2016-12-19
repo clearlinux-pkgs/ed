@@ -4,12 +4,12 @@
 #
 Name     : ed
 Version  : 1.9
-Release  : 11
-URL      : http://ftp.wayne.edu/gnu/ed/ed-1.9.tar.gz
-Source0  : http://ftp.wayne.edu/gnu/ed/ed-1.9.tar.gz
+Release  : 12
+URL      : https://mirrors.kernel.org/gnu/ed/ed-1.9.tar.gz
+Source0  : https://mirrors.kernel.org/gnu/ed/ed-1.9.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : GPL-3.0+ GPL-3.0
+License  : GPL-3.0 GPL-3.0+
 Requires: ed-bin
 Requires: ed-doc
 BuildRequires : texinfo
@@ -44,8 +44,9 @@ doc components for the ed package.
 %setup -q -n ed-1.9
 
 %build
+export LANG=C
 %configure --disable-static
-make V=1 %{?_smp_mflags}
+make V=1  %{?_smp_mflags}
 
 %install
 rm -rf %{buildroot}
