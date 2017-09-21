@@ -4,12 +4,12 @@
 #
 Name     : ed
 Version  : 1.14.2
-Release  : 14
+Release  : 15
 URL      : https://mirrors.kernel.org/gnu/ed/ed-1.14.2.tar.lz
 Source0  : https://mirrors.kernel.org/gnu/ed/ed-1.14.2.tar.lz
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : GPL-3.0+
+License  : GPL-3.0 GPL-3.0+
 Requires: ed-bin
 Requires: ed-doc
 BuildRequires : lzip
@@ -48,12 +48,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1495720677
-%configure --disable-static
+export SOURCE_DATE_EPOCH=1506020004
+%configure --disable-static CFLAGS="$CFLAGS"
 make V=1  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1495720677
+export SOURCE_DATE_EPOCH=1506020004
 rm -rf %{buildroot}
 %make_install
 
