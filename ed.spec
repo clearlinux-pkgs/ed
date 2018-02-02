@@ -4,7 +4,7 @@
 #
 Name     : ed
 Version  : 1.14.2
-Release  : 15
+Release  : 16
 URL      : https://mirrors.kernel.org/gnu/ed/ed-1.14.2.tar.lz
 Source0  : https://mirrors.kernel.org/gnu/ed/ed-1.14.2.tar.lz
 Summary  : No detailed summary available
