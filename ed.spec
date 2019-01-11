@@ -4,7 +4,7 @@
 #
 Name     : ed
 Version  : 1.15
-Release  : 18
+Release  : 19
 URL      : https://mirrors.kernel.org/gnu/ed/ed-1.15.tar.lz
 Source0  : https://mirrors.kernel.org/gnu/ed/ed-1.15.tar.lz
 Summary  : No detailed summary available
@@ -13,7 +13,7 @@ License  : GPL-3.0 GPL-3.0+
 Requires: ed-bin = %{version}-%{release}
 Requires: ed-license = %{version}-%{release}
 Requires: ed-man = %{version}-%{release}
-BuildRequires : lzip
+BuildRequires : plzip
 
 %description
 Description
@@ -68,12 +68,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1546465064
+export SOURCE_DATE_EPOCH=1547166847
 %configure --disable-static CFLAGS="$CFLAGS"
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1546465064
+export SOURCE_DATE_EPOCH=1547166847
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ed
 cp COPYING %{buildroot}/usr/share/package-licenses/ed/COPYING
