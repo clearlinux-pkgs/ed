@@ -4,13 +4,14 @@
 #
 Name     : ed
 Version  : 1.15
-Release  : 19
+Release  : 20
 URL      : https://mirrors.kernel.org/gnu/ed/ed-1.15.tar.lz
 Source0  : https://mirrors.kernel.org/gnu/ed/ed-1.15.tar.lz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0 GPL-3.0+
 Requires: ed-bin = %{version}-%{release}
+Requires: ed-info = %{version}-%{release}
 Requires: ed-license = %{version}-%{release}
 Requires: ed-man = %{version}-%{release}
 BuildRequires : plzip
@@ -29,19 +30,17 @@ superseded by full-screen editors such as GNU Emacs or GNU Moe.
 Summary: bin components for the ed package.
 Group: Binaries
 Requires: ed-license = %{version}-%{release}
-Requires: ed-man = %{version}-%{release}
 
 %description bin
 bin components for the ed package.
 
 
-%package doc
-Summary: doc components for the ed package.
-Group: Documentation
-Requires: ed-man = %{version}-%{release}
+%package info
+Summary: info components for the ed package.
+Group: Default
 
-%description doc
-doc components for the ed package.
+%description info
+info components for the ed package.
 
 
 %package license
@@ -62,21 +61,27 @@ man components for the ed package.
 
 %prep
 %setup -q -n ed-1.15
+cd %{_builddir}/ed-1.15
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1547166847
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1573777459
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %configure --disable-static CFLAGS="$CFLAGS"
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1547166847
+export SOURCE_DATE_EPOCH=1573777459
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ed
-cp COPYING %{buildroot}/usr/share/package-licenses/ed/COPYING
+cp %{_builddir}/ed-1.15/COPYING %{buildroot}/usr/share/package-licenses/ed/aeb23ef9343dcd5bfaf91ec1088f508e646f5370
 %make_install
 
 %files
@@ -87,13 +92,13 @@ cp COPYING %{buildroot}/usr/share/package-licenses/ed/COPYING
 /usr/bin/ed
 /usr/bin/red
 
-%files doc
+%files info
 %defattr(0644,root,root,0755)
-%doc /usr/share/info/*
+/usr/share/info/ed.info
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/ed/COPYING
+/usr/share/package-licenses/ed/aeb23ef9343dcd5bfaf91ec1088f508e646f5370
 
 %files man
 %defattr(0644,root,root,0755)
