@@ -4,7 +4,7 @@
 #
 Name     : ed
 Version  : 1.15
-Release  : 20
+Release  : 21
 URL      : https://mirrors.kernel.org/gnu/ed/ed-1.15.tar.lz
 Source0  : https://mirrors.kernel.org/gnu/ed/ed-1.15.tar.lz
 Summary  : No detailed summary available
