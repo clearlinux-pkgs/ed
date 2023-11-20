@@ -1,8 +1,8 @@
 Name     : ed
-Version  : 1.18
-Release  : 22
-URL      : https://mirrors.kernel.org/gnu/ed/ed-1.18.tar.lz
-Source0  : https://mirrors.kernel.org/gnu/ed/ed-1.18.tar.lz
+Version  : 1.19
+Release  : 23
+URL      : https://mirrors.kernel.org/gnu/ed/ed-1.19.tar.lz
+Source0  : https://mirrors.kernel.org/gnu/ed/ed-1.19.tar.lz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0 GPL-3.0+
